@@ -1,6 +1,6 @@
 # Clay Sculptor
 
-**Clay Sculptor**, a proof of concept **declarative UI development** toolkit for [Clay](https://github.com/nicbarker/clay).
+A lightweight **compile-time UI authoring** layer for Clay [Clay](https://github.com/nicbarker/clay).
 
 ## Description
 
