@@ -1,0 +1,49 @@
+<OuterContainer>
+    <LineEdit id="display"/>
+
+    <hr/>
+
+    <div style="display: flex; gap 4;">
+        <Button id="ce-btn" class="btn btn-danger">CE</Button>
+        <Button id="op-btn" class="btn">(</Button>
+        <Button id="cp-btn" class="btn">)</Button>
+        <Button id="mod-btn" class="btn">mod</Button>
+        <Button id="pi-btn" class="btn">PI</Button>
+    </div>
+
+    <div style="display: flex; gap 4;">
+        <Button id="seven-btn" class="btn">7</Button>
+        <Button id="eight-btn" class="btn">8</Button>
+        <Button id="nine-btn" class="btn">9</Button>
+        <Button id="divide-btn" class="btn">/</Button>
+        <Button id="sqrt-btn" class="btn">sqrt</Button>
+    </div>
+
+    <div style="display: flex; gap 4;">
+        <Button id="four-btn" class="btn">4</Button>
+        <Button id="five-btn" class="btn">5</Button>
+        <Button id="six-btn" class="btn">6</Button>
+        <Button id="multiply-btn" class="btn">x</Button>
+        <Button id="square-btn" class="btn">x^2</Button>
+    </div>
+
+    <div style="display: flex; gap 4;">
+        <div style="display: flex; flex-direction: column; gap 4;">
+            <div style="display: flex; gap 4;">
+                <Button id="one-btn" class="btn">1</Button>
+                <Button id="two-btn" class="btn">2</Button>
+                <Button id="three-btn" class="btn">3</Button>
+                <Button id="four-btn" class="btn">-</Button>
+            </div>
+
+            <div style="display: flex; gap 4;">
+                <Button id="zero-btn" class="btn">0</Button>
+                <Button id="decimal-btn" class="btn">.</Button>
+                <Button id="percent-btn" class="btn">%</Button>
+                <Button id="add-btn" class="btn">+</Button>
+            </div>
+        </div>
+
+        <Button id="equals-btn" class="btn btn-secondary">=</Button>
+    </div>
+</OuterContainer>
