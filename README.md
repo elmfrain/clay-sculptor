@@ -1,6 +1,6 @@
 # Clay Sculptor
 
-A lightweight **compile-time UI authoring** layer for Clay [Clay](https://github.com/nicbarker/clay).
+A lightweight **compile-time UI authoring** layer for [Clay](https://github.com/nicbarker/clay).
 
 ## Description
 
