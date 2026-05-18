@@ -3,8 +3,10 @@ OuterContainer {
 
     display: flex;
     flex-direction: column;
-    gap: 8;
+    gap: 4;
     border-radius: 5;
+
+    background-color: #383838;
 }
 
 #line-editor {
