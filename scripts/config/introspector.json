@@ -1,0 +1,23 @@
+{
+    "preprocessor": {
+        "executable": "cpp",
+        "arguments": [
+            "-Ifake_libc",
+            "-nostdinc"
+        ],
+        "replaceBeforePreprocessing": [
+            ["#define CLAY_PACKED_ENUM enum __attribute__\\(\\(__packed__\\)\\)", "#define CLAY_PACKED_ENUM enum"],
+            ["#define CLAY_PACKED_ENUM __pragma\\(pack\\(push, 1\\)\\) enum __pragma\\(pack\\(pop\\)\\)", "#define CLAY_PACKED_ENUM enum"]
+        ],
+        "replaceAfterPreprocessing": []
+    },
+    "namespaces": ["Clay_", "CLAY_"],
+    "ignoreCapabilities": [
+        "CLAY__ELEMENT_DEFINITION_LATCH",
+        "Clay__.*\\(\\)",
+        ".*Wrapper.*",
+        "CLAY_LAYOUT_DEFAULT",
+        "Clay__debugViewHighlightColor",
+        "Clay__debugViewWidth"
+    ]
+}
