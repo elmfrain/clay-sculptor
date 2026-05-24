@@ -1,0 +1,215 @@
+[
+    {
+        "capability": "corner-radius",
+        "domain": "style",
+        "implements" : [
+            "Clay_CornerRadius.topLeft",
+            "Clay_CornerRadius.topRight",
+            "Clay_CornerRadius.bottomLeft",
+            "Clay_CornerRadius.bottomRight",
+            "Clay_CornerRadius",
+            "Clay_ElementDeclaration.border"
+        ],
+        "authoring": {
+            "cssProperties": {
+                "border-radius": {
+                    "isShorthand": true,
+                    "syntax": "<length>{1,4}",
+                    "expandsTo": [
+                        "border-top-left-radius",
+                        "border-top-right-radius",
+                        "border-bottom-right-radius",
+                        "border-bottom-left-radius"
+                    ],
+                    "expansionMethod": "clockwise4"
+                },
+                "border-top-left-radius": {
+                    "syntax": "<length>",
+                    "lowersTo": {
+                        "struct": "Clay_ElementDeclaration",
+                        "assign": {
+                            "member": "cornerRadius",
+                            "value": {
+                                "struct": "Clay_CornerRadius",
+                                "assign": {
+                                    "member": "topLeft",
+                                    "value": "<length>"
+                                }
+                            }
+                        }
+                    }
+                },
+                "border-top-right-radius": {
+                    "syntax": "<length>",
+                    "lowersTo": {
+                        "struct": "Clay_ElementDeclaration",
+                        "assign": {
+                            "member": "cornerRadius",
+                            "value": {
+                                "struct": "Clay_CornerRadius",
+                                "assign": {
+                                    "member": "topRight",
+                                    "value": "<length>"
+                                }
+                            }
+                        }
+                    }
+                },
+                "border-bottom-right-radius": {
+                    "syntax": "<length>",
+                    "lowersTo": {
+                        "struct": "Clay_ElementDeclaration",
+                        "assign": {
+                            "member": "cornerRadius",
+                            "value": {
+                                "struct": "Clay_CornerRadius",
+                                "assign": {
+                                    "member": "bottomRight",
+                                    "value": "<length>"
+                                }
+                            }
+                        }
+                    }
+                },
+                "border-bottom-left-radius": {
+                    "syntax": "<length>",
+                    "lowersTo": {
+                        "struct": "Clay_ElementDeclaration",
+                        "assign": {
+                            "member": "cornerRadius",
+                            "value": {
+                                "struct": "Clay_CornerRadius",
+                                "assign": {
+                                    "member": "bottomLeft",
+                                    "value": "<length>"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    {
+        "capability": "layout-direction",
+        "domain": "layout",
+        "implements": [
+            "Clay_LayoutDirection::CLAY_LEFT_TO_RIGHT",
+            "Clay_LayoutDirection::CLAY_TOP_TO_BOTTOM",
+            "Clay_LayoutDirection",
+            "Clay_LayoutConfig.layoutDirection"
+        ],
+        "authoring": {
+            "cssProperties": {
+                "flex-direction": {
+                    "syntax": "row | column",
+                    "enumValues": {
+                        "row": "CLAY_LEFT_TO_RIGHT",
+                        "column": "CLAY_TOP_TO_BOTTOM"
+                    },
+                    "lowersTo": {
+                        "struct": "Clay_ElementDeclaration",
+                        "assign": {
+                            "member": "layout",
+                            "value": {
+                                "struct": "Clay_LayoutConfig",
+                                "assign": {
+                                    "member": "layoutDirection",
+                                    "value": {
+                                        "enum": "Clay_LayoutDirection",
+                                        "value": "<enum>"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    {
+        "capability": "sizing",
+        "domain": "layout",
+        "implements": [
+
+        ],
+        "authoring": {
+            "xmlAttributes": {
+                "width": {
+                    "syntax": "<length>",
+                    "lowersTo": {
+                        "struct": "Clay_ElementDeclaration",
+                        "assign": {
+                            "member": "layout",
+                            "value": {
+                                "struct": "Clay_LayoutConfig",
+                                "assign": {
+                                    "member": "sizing",
+                                    "value": {
+                                        "struct": "Clay_Sizing",
+                                        "assign": {
+                                            "member": "width",
+                                            "value": {
+                                                "struct": "Clay_SizingAxis",
+                                                "assign": [
+                                                    { "member": "type", "value": { "enum": "Clay__SizingType", "value": "CLAY__SIZING_TYPE_FIXED" } },
+                                                    {
+                                                        "member": "size.minMax",
+                                                        "value": {
+                                                            "struct": "Clay_SizingMinMax",
+                                                            "assign": [
+                                                                { "member": "min", "value": "<length>" },
+                                                                { "member": "max", "value": "<length>" }
+                                                            ]
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "height": {
+                    "syntax": "<length>",
+                    "lowersTo": {
+                        "struct": "Clay_ElementDeclaration",
+                        "assign": {
+                            "member": "layout",
+                            "value": {
+                                "struct": "Clay_LayoutConfig",
+                                "assign": {
+                                    "member": "sizing",
+                                    "value": {
+                                        "struct": "Clay_Sizing",
+                                        "assign": {
+                                            "member": "height",
+                                            "value": {
+                                                "struct": "Clay_SizingAxis",
+                                                "assign": [
+                                                    { "member": "type", "value": { "enum": "Clay__SizingType", "value": "CLAY__SIZING_TYPE_FIXED" } },
+                                                    {
+                                                        "member": "size.minMax",
+                                                        "value": {
+                                                            "struct": "Clay_SizingMinMax",
+                                                            "assign": [
+                                                                { "member": "min", "value": "<length>" },
+                                                                { "member": "max", "value": "<length>" }
+                                                            ]
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+]
