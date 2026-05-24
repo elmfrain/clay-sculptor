@@ -222,6 +222,8 @@ def load_config(config_path: str) -> None:
     except UnicodeDecodeError:
         print("Config file '", config_path, "' is not encoded in UTF-8 format", file=sys.stderr)
         exit(-1)
+    finally:
+        config_file.close()
 
     try:
         jsonschema.validate(instance=config, schema=config_schema)
